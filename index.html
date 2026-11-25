@@ -159,17 +159,17 @@ nav a:first-child { color: #2b3a7a; border-bottom: 1px solid #2b3a7a; }
     if (window.matchMedia('(pointer: coarse)').matches) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    var colors = ['#2b3a7a', '#b2fce4', '#c9b8ff', '#ffd6e8', '#ffffff'];
+    var colors = ['#b2fce4', '#8ff0c8', '#6fe3b4'];
     var last = 0;
 
     document.addEventListener('mousemove', function (e) {
       var now = Date.now();
-      if (now - last < 30) return; // limits how many sparkles appear
+      if (now - last < 20) return; // limits how many sparkles appear
       last = now;
 
       var s = document.createElement('span');
       s.className = 'sparkle';
-      s.textContent = Math.random() > 0.5 ? '✦' : '✧';
+      s.textContent = Math.random() > 0.5 ? '✦' : '✧' : '✶' : '♡': '⋆';
       s.style.left = e.clientX + 'px';
       s.style.top = e.clientY + 'px';
       s.style.color = colors[Math.floor(Math.random() * colors.length)];
