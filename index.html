@@ -103,6 +103,9 @@ nav a:first-child { color: #2b3a7a; border-bottom: 1px solid #2b3a7a; }
 
         .links a { border-bottom: none; font-size: 30px; color: #2b3a7a; transition: transform 0.2s, color 0.2s; }
     .links a:hover { color: #6fe3b4; transform: translateY(-3px); }
+    .nav-email .addr { display: none; }
+    .nav-email:hover .word { display: none; }
+    .nav-email:hover .addr { display: inline; }
     
   </style>
 </head>
@@ -115,7 +118,7 @@ nav a:first-child { color: #2b3a7a; border-bottom: 1px solid #2b3a7a; }
 <nav>
       <a href="#about">About</a>
       <a href="#socials">Socials</a>
-      <a href="#contact">Contact</a>
+      <a href="mailto:danarosey@gmail.com" class="nav-email"><span class="word">Contact</span><span class="addr">danarosey@gmail.com</span></a>
       
     </nav>
   </header>
