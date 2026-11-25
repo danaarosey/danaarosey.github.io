@@ -7,10 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Cutive+Mono&family=Inter:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
    <style>
     :root {
-      --bg: #f6f3ee;
+      #b2fce4
+     --bg: #ffffff;
       --text: #1a1a1a;
       --muted: #7a756d;
       --line: #d9d4cb;
+      
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-weight: 300; }
@@ -44,8 +46,8 @@
   font-weight: 400;
   margin: 0 10px;
 }
-    nav { display: flex; gap: 28px; }
-    nav a:hover { color: var(--muted); }
+   nav { display: flex; gap: 48px; font-family: 'Cormorant Garamond', serif; font-size: 22px; letter-spacing: 0.02em; text-transform: none; color: #6b78b0; }
+nav a:first-child { color: #2b3a7a; border-bottom: 1px solid #2b3a7a; }
 
     .hero { position: relative; height: 88vh; min-height: 480px; overflow: hidden; background: #cfc8bc; }
     .hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -76,11 +78,14 @@
 
     @media (max-width: 700px) {
       header { padding: 18px 16px; }
-      nav { gap: 16px; }
+      nav { gap: 20px; font-size: 18px; }
       .grid { grid-template-columns: 1fr; }
       .intro, .contact { margin: 80px auto; padding: 0 16px; }
       footer { flex-direction: column; gap: 8px; text-align: center; padding: 24px 16px; }
     }
+     .badge-row { display: flex; justify-content: center; align-items: center; gap: 16px; padding: 24px 16px 40px; }
+.badge { background: var(--mint); color: #111; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 15px; padding: 12px 40px; border-radius: 6px; }
+.badge-note { font-family: 'Cormorant Garamond', serif; font-size: 26px; }
   </style>
 </head>
 <body>
@@ -89,13 +94,17 @@
 
   <header>
          <a href="#" class="wordmark"><span class="bracket">[</span> dana – waldburger <span class="bracket">]</span></a>
-    <nav class="label">
+<nav>
       <a href="#about">About</a>
       <a href="#journal">Journal</a>
       <a href="#contact">Contact</a>
+      
     </nav>
   </header>
-
+<div class="badge-row">
+  <span class="badge">san francisco</span>
+  <span class="badge-note">Based</span>
+</div>
   <section class="hero">
     <img src="me.jpg" alt="Dana">
     <div class="hero-text fade">
