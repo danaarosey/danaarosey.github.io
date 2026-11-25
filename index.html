@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dana Waldburger</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Cutive+Mono&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Cutive+Mono&family=Inter:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
    <style>
     :root {
       --bg: #f6f3ee;
@@ -31,7 +31,19 @@
 }
 
     header { display: flex; justify-content: space-between; align-items: center; padding: 22px 32px; border-bottom: 1px solid var(--line); }
-    .wordmark { font-family: 'Cormorant Garamond', serif; font-size: 28px; letter-spacing: 0.02em; }
+   .wordmark {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 44px;
+  color: #2b3a7a;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.wordmark .bracket {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  margin: 0 10px;
+}
     nav { display: flex; gap: 28px; }
     nav a:hover { color: var(--muted); }
 
@@ -76,7 +88,7 @@
   <div class="announce ">Now in San Francisco &nbsp;·&nbsp; Originally San Diego</div>
 
   <header>
-    <a href="#" class="wordmark">Dana Waldburger</a>
+         <a href="#" class="wordmark"><span class="bracket">[</span> dana – waldburger <span class="bracket">]</span></a>
     <nav class="label">
       <a href="#about">About</a>
       <a href="#journal">Journal</a>
