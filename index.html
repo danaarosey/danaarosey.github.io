@@ -123,6 +123,31 @@
     .pop-bubble a:hover { color: #6fe3b4; }
     .contact-pop:hover .pop-bubble,
     .contact-pop.open .pop-bubble { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); }
+
+    .work { max-width: 1100px; margin: 120px auto; padding: 0 24px; text-align: center; }
+    .work h2 { font-size: 34px; font-weight: 400; margin: 16px 0 32px; }
+
+    .filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+    .filter {
+      font-family: 'Cutive Mono', monospace; font-size: 14px; letter-spacing: 0.1em;
+      background: none; border: 1px solid #2b3a7a; color: #2b3a7a;
+      padding: 8px 18px; border-radius: 999px; cursor: pointer; transition: all 0.2s;
+    }
+    .filter:hover { background: #b2fce4; border-color: #b2fce4; }
+    .filter.active { background: #2b3a7a; color: #fff; }
+
+    .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; text-align: left; }
+    .piece { margin: 0; cursor: pointer; }
+    .piece img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: #eaf7f0; display: block; transition: transform 0.5s, filter 0.5s; }
+    .piece:hover img { transform: scale(1.02); filter: brightness(0.92); }
+    .piece figcaption { display: flex; flex-direction: column; gap: 4px; padding-top: 12px; }
+    .piece figcaption span { font-size: 16px; }
+    .piece figcaption em { font-style: normal; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .piece.hide { display: none; }
+
+    @media (max-width: 700px) {
+      .work-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+    }
     
   </style>
 </head>
@@ -133,6 +158,7 @@
   <header>
          <a href="#" class="wordmark"><span class="bracket">[</span> dana – waldburger <span class="bracket">]</span></a>
 <nav>
+  <a href="#work">Work</a>
   <a href="#about">About</a>
   <a href="#socials">Socials</a>
   <span class="contact-pop" id="contact-pop">
@@ -161,6 +187,46 @@
     <p> Big on ceramics, clothes, cooking, traveling, events, beauty, painting, dancing. </p>
     <p class="tagline">Loves to have a good time</p>
   </section>
+
+  <section class="work" id="work">
+  <div class="label">Selected work</div>
+  <h2>Things I've made.</h2>
+
+  <div class="filters">
+    <button class="filter active" data-filter="all">All</button>
+    <button class="filter" data-filter="ceramics">Ceramics</button>
+    <button class="filter" data-filter="painting">Painting</button>
+    <button class="filter" data-filter="styling">Styling</button>
+    <button class="filter" data-filter="video">Video</button>
+  </div>
+
+  <div class="work-grid">
+    <figure class="piece" data-cat="ceramics">
+      <img src="work1.jpg" alt="">
+      <figcaption><span>Speckled mug set</span><em>Ceramics · 2026</em></figcaption>
+    </figure>
+    <figure class="piece" data-cat="painting">
+      <img src="work2.jpg" alt="">
+      <figcaption><span>Untitled, oil on canvas</span><em>Painting · 2026</em></figcaption>
+    </figure>
+    <figure class="piece" data-cat="styling">
+      <img src="work3.jpg" alt="">
+      <figcaption><span>Thrifted fall edit</span><em>Styling · Depop</em></figcaption>
+    </figure>
+    <figure class="piece" data-cat="video">
+      <img src="work4.jpg" alt="">
+      <figcaption><span>Day in SF vlog</span><em>Video · YouTube</em></figcaption>
+    </figure>
+    <figure class="piece" data-cat="ceramics">
+      <img src="work5.jpg" alt="">
+      <figcaption><span>Hand-built vase</span><em>Ceramics · 2025</em></figcaption>
+    </figure>
+    <figure class="piece" data-cat="painting">
+      <img src="work6.jpg" alt="">
+      <figcaption><span>Watercolor studies</span><em>Painting · 2025</em></figcaption>
+    </figure>
+  </div>
+</section>
 
 <section class="grid" id="photos">
     <div class="tile"><img src="dw1.png" alt=""><span class="label">Home</span></div>
@@ -231,6 +297,19 @@
     });
     document.addEventListener('click', function (e) {
       if (!pop.contains(e.target)) pop.classList.remove('open');
+    });
+
+    var filters = document.querySelectorAll('.filter');
+    var pieces = document.querySelectorAll('.piece');
+    filters.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        filters.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var f = btn.getAttribute('data-filter');
+        pieces.forEach(function (p) {
+          p.classList.toggle('hide', f !== 'all' && p.getAttribute('data-cat') !== f);
+        });
+      });
     });
     
   })();
