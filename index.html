@@ -12,6 +12,7 @@
       --text: #1a1a1a;
       --muted: #7a756d;
       --line: #d9d4cb;
+      --mint: #b2fce4;
       
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,7 +33,7 @@
   text-transform: none;
 }
 
-    header { display: flex; justify-content: space-between; align-items: center; padding: 22px 32px; border-bottom: 1px solid var(--line); }
+    header { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 28px 16px; border-bottom: 1px solid var(--line); }
    .wordmark {
   font-family: 'Pinyon Script', cursive;
   font-size: 44px;
@@ -90,7 +91,7 @@ nav a:first-child { color: #2b3a7a; border-bottom: 1px solid #2b3a7a; }
 </head>
 <body>
 
-  <div class="announce ">Now in San Francisco &nbsp;·&nbsp; Originally San Diego</div>
+  <div class="announce ">In San Francisco &nbsp;·&nbsp; From San Diego</div>
 
   <header>
          <a href="#" class="wordmark"><span class="bracket">[</span> dana – waldburger <span class="bracket">]</span></a>
@@ -102,8 +103,7 @@ nav a:first-child { color: #2b3a7a; border-bottom: 1px solid #2b3a7a; }
     </nav>
   </header>
 <div class="badge-row">
-  <span class="badge">san francisco</span>
-  <span class="badge-note">Based</span>
+  <span class="badge">new site · say hi</span>
 </div>
   <section class="hero">
     <img src="me.jpg" alt="Dana">
