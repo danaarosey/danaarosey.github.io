@@ -169,7 +169,8 @@ nav a:first-child { color: #2b3a7a; border-bottom: 1px solid #2b3a7a; }
 
       var s = document.createElement('span');
       s.className = 'sparkle';
-      s.textContent = Math.random() > 0.5 ? '✦' : '✧' : '✶' : '♡': '⋆';
+            var shapes = ['✦', '✧', '✶', '♡', '⋆'];
+      s.textContent = shapes[Math.floor(Math.random() * shapes.length)];
       s.style.left = e.clientX + 'px';
       s.style.top = e.clientY + 'px';
       s.style.color = colors[Math.floor(Math.random() * colors.length)];
