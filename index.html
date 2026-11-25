@@ -1,1 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dana Waldburger</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf7f2;
+      --text: #1f1d2b;
+      --muted: #6b6878;
+      --accent: #5b2a86;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 0 20px;
+    }
+    main { max-width: 680px; margin: 80px auto; }
+    h1 { font-size: 3rem; font-weight: 800; line-height: 1.1; }
+    h1 span { color: var(--accent); }
+    .tagline { font-size: 1.25rem; color: var(--muted); margin: 16px 0 40px; }
+    h2 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin: 48px 0 16px; }
+    p { margin-bottom: 16px; }
+    .cards { display: grid; gap: 16px; }
+    .card {
+      background: var(--card);
+      padding: 20px 24px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .card h3 { font-size: 1.05rem; margin-bottom: 4px; }
+    .card p { color: var(--muted); margin: 0; }
+    .links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+    .links a {
+      text-decoration: none;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .links a:hover { background: var(--accent); color: white; }
+    footer { margin-top: 64px; color: var(--muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Hi, I'm <span>Dana</span>.</h1>
+    <p class="tagline">Account Executive based in San Francisco. San Diego native. Learning to code one commit at a time.</p>
 
+    <h2>About</h2>
+    <p>Write a few sentences about yourself here: what you do, what you care about, what you're working on.</p>
+
+    <h2>Things I'm into</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Interest one</h3>
+        <p>A short line about it.</p>
+      </div>
+      <div class="card">
+        <h3>Interest two</h3>
+        <p>A short line about it.</p>
+      </div>
+      <div class="card">
+        <h3>Interest three</h3>
+        <p>A short line about it.</p>
+      </div>
+    </div>
+
+    <h2>Say hi</h2>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/YOUR-PROFILE">LinkedIn</a>
+      <a href="mailto:you@example.com">Email</a>
+    </div>
+
+    <footer>Built by hand on GitHub Pages.</footer>
+  </main>
+</body>
+</html>
