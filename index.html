@@ -145,7 +145,7 @@ nav a:first-child { color: #2b3a7a; border-bottom: 1px solid #2b3a7a; }
     <div class="links label">
       <a href="https://www.linkedin.com/in/dana-waldburger/">LinkedIn</a>
       <a href="https://www.instagram.com/danaarosey/">Instagram</a>
-      <a href="mailto:danarosey@gmail.com">Email</a>
+     <a href="mailto:danarosey@gmail.com" id="email-link">Email</a>
     </div>
   </section>
 
@@ -180,7 +180,15 @@ nav a:first-child { color: #2b3a7a; border-bottom: 1px solid #2b3a7a; }
       document.body.appendChild(s);
       setTimeout(function () { s.remove(); }, 900);
     });
+        var emailLink = document.getElementById('email-link');
+    emailLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      navigator.clipboard.writeText('danarosey@gmail.com');
+      emailLink.textContent = 'Copied!';
+      setTimeout(function () { emailLink.textContent = 'Email'; }, 1500);
+    });
   })();
+  
 </script>
 </body>
 </html>
