@@ -87,6 +87,18 @@ nav a:first-child { color: #2b3a7a; border-bottom: 1px solid #2b3a7a; }
      .badge-row { display: flex; justify-content: center; align-items: center; gap: 16px; padding: 24px 16px 40px; }
 .badge { background: var(--mint); color: #111; font-family: 'Cutive Mono', monospace; font-weight: 600; font-size: 15px; padding: 12px 40px; border-radius: 6px; }
 .badge-note { font-family: 'Cutive Mono', monospace; font-size: 26px; }
+         .sparkle {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      text-shadow: 0 0 6px rgba(178, 252, 228, 0.9);
+      animation: sparkle 0.9s ease-out forwards;
+    }
+    @keyframes sparkle {
+      0%   { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+      100% { opacity: 0; transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0.3) rotate(180deg); }
+    }
   </style>
 </head>
 <body>
@@ -141,6 +153,33 @@ nav a:first-child { color: #2b3a7a; border-bottom: 1px solid #2b3a7a; }
     <span>© 2026 Dana Waldburger</span>
 
   </footer>
+<script>
+  (function () {
+    // Skip on phones/tablets and for people who turn off motion
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+    var colors = ['#2b3a7a', '#b2fce4', '#c9b8ff', '#ffd6e8', '#ffffff'];
+    var last = 0;
+
+    document.addEventListener('mousemove', function (e) {
+      var now = Date.now();
+      if (now - last < 30) return; // limits how many sparkles appear
+      last = now;
+
+      var s = document.createElement('span');
+      s.className = 'sparkle';
+      s.textContent = Math.random() > 0.5 ? '✦' : '✧';
+      s.style.left = e.clientX + 'px';
+      s.style.top = e.clientY + 'px';
+      s.style.color = colors[Math.floor(Math.random() * colors.length)];
+      s.style.fontSize = (10 + Math.random() * 12) + 'px';
+      s.style.setProperty('--dx', (Math.random() * 40 - 20) + 'px');
+      s.style.setProperty('--dy', (Math.random() * 30 + 10) + 'px');
+      document.body.appendChild(s);
+      setTimeout(function () { s.remove(); }, 900);
+    });
+  })();
+</script>
 </body>
 </html>
