@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dana Waldburger</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Cutive+Mono&family=Inter:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
-   <style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
     :root {
-      #b2fce4
+     
      --bg: #ffffff;
       --text: #1a1a1a;
       --muted: #7a756d;
@@ -99,6 +100,10 @@ nav a:first-child { color: #2b3a7a; border-bottom: 1px solid #2b3a7a; }
       0%   { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
       100% { opacity: 0; transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0.3) rotate(180deg); }
     }
+
+        .links a { border-bottom: none; font-size: 30px; color: #2b3a7a; transition: transform 0.2s, color 0.2s; }
+    .links a:hover { color: #6fe3b4; transform: translateY(-3px); }
+    
   </style>
 </head>
 <body>
@@ -143,9 +148,9 @@ nav a:first-child { color: #2b3a7a; border-bottom: 1px solid #2b3a7a; }
     <div class="label">Contact</div>
     <h2>Let's connect.</h2>
     <div class="links label">
-      <a href="https://www.linkedin.com/in/dana-waldburger/">LinkedIn</a>
-      <a href="https://www.instagram.com/danaarosey/">Instagram</a>
-     <a href="mailto:danarosey@gmail.com" id="email-link">Email</a>
+      <a href="https://www.linkedin.com/in/dana-waldburger/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/danaarosey/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="mailto:danarosey@gmail.com" id="email-link" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
     </div>
   </section>
 
@@ -184,8 +189,8 @@ nav a:first-child { color: #2b3a7a; border-bottom: 1px solid #2b3a7a; }
     emailLink.addEventListener('click', function (e) {
       e.preventDefault();
       navigator.clipboard.writeText('danarosey@gmail.com');
-      emailLink.textContent = 'Copied!';
-      setTimeout(function () { emailLink.textContent = 'Email'; }, 1500);
+              emailLink.innerHTML = '<span style="font-size:14px">Copied!</span>';
+      setTimeout(function () { emailLink.innerHTML = '<i class="fa-solid fa-envelope"></i>'; }, 1500);
     });
   })();
   
