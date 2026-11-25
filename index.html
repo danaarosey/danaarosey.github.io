@@ -18,7 +18,17 @@
 
     .label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; }
 
-    .announce { text-align: center; padding: 10px 16px; background: var(--text); color: var(--bg); }
+    .announce {
+  font-family: 'Cutive Mono', monospace;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  color: #3b4a8f;
+  background: var(--bg);
+  text-align: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  text-transform: none;
+}
 
     header { display: flex; justify-content: space-between; align-items: center; padding: 22px 32px; border-bottom: 1px solid var(--line); }
     .wordmark { font-family: 'Cormorant Garamond', serif; font-size: 28px; letter-spacing: 0.02em; }
@@ -35,7 +45,7 @@
     .intro p { color: var(--muted); line-height: 1.8; }
     .intro .tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; color: var(--text); margin-top: 28px; }
 
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
     .tile { aspect-ratio: 4 / 5; background: #ddd6ca; overflow: hidden; position: relative; }
     .tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
     .tile:hover img { transform: scale(1.04); }
@@ -63,7 +73,7 @@
 </head>
 <body>
 
-  <div class="announce label">Now in San Francisco &nbsp;·&nbsp; Originally San Diego</div>
+  <div class="announce ">Now in San Francisco &nbsp;·&nbsp; Originally San Diego</div>
 
   <header>
     <a href="#" class="wordmark">Dana Waldburger</a>
@@ -90,9 +100,10 @@
   </section>
 
   <section class="grid" id="journal">
-    <div class="tile"><img src="photo1.jpg" alt=""><span class="label">Travel</span></div>
-    <div class="tile"><img src="photo2.jpg" alt=""><span class="label">Home</span></div>
-    <div class="tile"><img src="photo3.jpg" alt=""><span class="label">Lately</span></div>
+    <div class="tile"><img src="dw1.png" alt=""><span class="label">Travel</span></div>
+<div class="tile"><img src="dw2.png" alt=""><span class="label">Home</span></div>
+<div class="tile"><img src="dw3.png" alt=""><span class="label">Lately</span></div>
+    <div class="tile"><img src="dw4.png" alt=""><span class="label">Lately</span></div>
   </section>
 
   <section class="contact" id="contact">
